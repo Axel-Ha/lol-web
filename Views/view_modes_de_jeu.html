@@ -4,23 +4,24 @@
 		<meta charset="utf-8" />
 		<!-- Ca c'est pour les mobiles -->
 		<meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" href="Content/Css/ConnexionWYES.css" />
-		<title>WYES : When Your Eyes Speak/Connexion</title>
+		<link rel="stylesheet" href="Content/Css/InscriptionWYES.css" />
+		<title>WYES : When Your Eyes Speak/Inscription</title>
 	</head>
 
 	<body>
 		<div id="bloc_page">
 			<header>
 				<div id="logo">
-					<a href="?controller=accueil"><img src="Content/image\logo_wyes.png" alt="Logo WYES" title="Logo: WYES" /></a>
+					<a href="?controller=accueil"><img src="Content/image\logo_league_of_legends.jpg alt="Logo WYES" title="Logo: WYES" /></a>
 				</div>
 
 				<nav>
 					<ul>
 						<li><a href="?controller=accueil">Accueil</a></li>
-						<li><a href="?controller=connexion">Connexion</a></li>
-						<li><a href="?controller=inscription">Inscription</a></li>
-						<li><a href="view_boutique.html">Boutique</a></li>
+						<li><a href="?controller=connexion">Personnages</a></li>
+						<li><a href="?controller=inscription">Objets</a></li>
+						<li><a href="Views/view_boutique.html">Sorts d'invocateurs</a></li>
+						<li><a href="Views/view_boutique.html">Modes de jeu</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,24 +33,24 @@
 
 			<section>
 				<article>
-					<h1>Connectez-Vous</h1>
+					<h1>Veuillez sélectionner votre Statut !</h1>
 
-					<form action="?controller=connexion&action=verification" method="post">
+				  	<form action="?controller=inscription&action=vaSurInscription" method="post">
+						<p>
+					    	<label for="role" class="left"><span id="centre1">Votre Statut :</span></label><br /><br />
 
-						<div>
-					    	<label for="mail">E-mail : </label>
-					        <input type="email" id="mail" name="mail">
-					    </div>
+						   	<input value="patient"name="role" id="role" type="radio">
+						   	<label for="patient">Patient</label>
 
-					    <div>
-					        <label for="name">Mot De Passe : </label>
-					        <input type="password" id="mdp" name="mdp">
-					    </div>
+						   	<input value="medecin"name="role" id="role" type="radio">
+						    <label for="medecin">Medecin</label>
 
-					    <div class="button">
-					    	<button type="submit">Connexion</button>
-					    </div>
-					</form>
+						    <input value="aidant"name="role" id="role" type="radio">
+						   	<label for="aidant">Aidant</label>
+
+							<input type="submit" value="Envoyer" />
+					   	</p>
+				  	</form>
 
 				</article>
 			</section>

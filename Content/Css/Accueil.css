@@ -31,12 +31,37 @@
 
 /* Corps de la page */
 
+*{
+    box-sizing: border-box;
+}
+
+
 body
 {
 	background: url("images/ombre.png") repeat-x top, url("images/fond_page_jaune.png");
 	font-family: "Trebuchet MS", Arial;
 	color: black;
+    margin:0;
 }
+
+.container{
+    max-width: 1170px;
+    margin:auto;
+    position:relative;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
 
 #bloc_page
 {

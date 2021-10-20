@@ -4,7 +4,7 @@ require_once "Utils/functions.php"; //Pour avoir la fonction e()
 require_once "Models/Model.php"; //Inclusion du modèle
 require_once "Controllers/Controller.php"; //Inclusion de la classe Controller
 
-$controllers = ["accueil","connexion","inscription","send","reception"]; //Liste des contrôleurs -- A RENSEIGNER
+$controllers = ["accueil","connexion","inscription","send","reception","details_personnages"]; //Liste des contrôleurs -- A RENSEIGNER
 $controller_default = "accueil"; //Nom du contrôleur par défaut-- A RENSEIGNER
 
 //error_log("CONTROLLER:" . $_GET['controller'] . "\n", 3, "/home/xubuntu/public_html/Mvc/php.log");

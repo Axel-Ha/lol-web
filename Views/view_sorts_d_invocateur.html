@@ -6,22 +6,22 @@
     <!-- Ca c'est pour les mobiles -->
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="Content/Css/inscription.css" />
-    <title>WYES : When Your Eyes Speak/Inscription Patient</title>
+    <title>WYES : When Your Eyes Speak/Inscription Aidant</title>
   </head>
 
   <body>
     <div id="bloc_page">
       <header>
         <div id="logo">
-          <a href="?controller=accueil"><img src="Content/image\logo_wyes.png" alt="Logo WYES" title="Logo: WYES" /></a>
+          <a href="?controller=accueil"><img src="Content/image\logo_league_of_legends.jpg" alt="Logo WYES" title="Logo: WYES" /></a>
         </div>
 
         <nav>
           <ul>
-            <li><a href="?controller=accueil">Accueil</a></li>
-            <li><a href="?controller=connexion">Connexion</a></li>
-            <li><a href="?controller=inscription">Inscription</a></li>
-            <li><a href="Views/view_boutique.html">Boutique</a></li>
+						<li><a href="?controller=connexion">Personnages</a></li>
+						<li><a href="?controller=inscription">Objets</a></li>
+						<li><a href="Views/view_boutique.html">Sorts d'invocateurs</a></li>
+						<li><a href="Views/view_boutique.html">Modes de jeu</a></li>
           </ul>
         </nav>
       </header>
@@ -33,7 +33,7 @@
 
       <section>
         <article>
-          <h1>Inscription Patient</h1>
+          <h1>Inscription Aidant</h1>
 
           <form action="?controller=inscription&action=info" method="post">
             <p>
@@ -46,7 +46,7 @@
               <input name="nom" id="nom" type="text" size="30" maxlength="30" />
             </p>
 
-              <input name="role" value="patient" type="hidden"/>
+              <input name="role" value="aidant" type="hidden"/>
 
             <p>
               <label for="nom" class="left">E-mail :</label>
