@@ -46,13 +46,25 @@ class Model
 
   public function get_information(): ?array
   {
-    $obj = json_decode(file_get_contents('http://ddragon.leagueoflegends.com/cdn/11.20.1/data/en_US/champion.json'), true);
+    $obj = json_decode(file_get_contents('http://ddragon.leagueoflegends.com/cdn/11.20.1/data/fr_FR/champion.json'), true);
     $index = 0;
     foreach ($obj["data"] as $cle => $value) {
-
       $informations[$cle] = $value;
       $index++;
     }
+    return $informations;
+  }
+
+  public function get_image_personnage($nom): ?array
+  {
+    $adresse = "http://ddragon.leagueoflegends.com/cdn/11.20.1/data/fr_FR/champion/". $nom. ".json";
+    $obj = json_decode(file_get_contents($adresse), true);
+    $index = 0;
+    foreach ($obj["data"] as $cle => $value) {
+      $informations[$cle] = $value;
+      $index++;
+    }
+    $informations["nom"] = $nom;
     return $informations;
   }
 
@@ -63,20 +75,6 @@ class Model
       $information_personnages[$cle] = $value;
     }
     return $information_personnages;
-  }
-
-  public function get_personnage($all_character,$nom): ?array
-  {
-    echo $nom;
-    $info_character = [];
-    foreach($all_character as $cle => $value)
-    {
-      if($cle === $nom)
-      {
-        $info_character[$cle] = $value;
-      }
-    }
-    return $info_character;
   }
 
   public function add_info()

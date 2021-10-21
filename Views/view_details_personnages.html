@@ -5,23 +5,50 @@
         <!-- Remplacer le titre par le nom du personnage -->
         <title>Détails </title>
 
-        <h1>Bienvenue sur votre espace personnel</h1>
+        <h1>            
+          <?php
+            $nom = $data["nom"];
+            echo $nom;
+          ?>
+        </h1>
+        <h2>
+          <?php 
+          echo $data[$nom]["title"];
+          ?>
+        </h2>
     </head>
-    <style>
-    form
-    {
-        text-align:center;
-    }
-    </style>
     <body>
-
         <p>
-          <?php var_dump($data); ?>
-          <!-- <?php echo var_dump($data["Aatrox"]); ?> -->
-          <!-- <?php echo var_dump($data["Aatrox"]["tags"][1]); ?> -->
-          <!-- Bonjour et bienvenue <?=var_dump($data) ?> -->
+          <?php 
+          $character_spells = $data[$nom]["spells"];
+          $character_passive = $data[$nom]["passive"]["image"]["full"];
+          
+          ?>
+          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>">
+          <?php echo $data[$nom]["passive"]["description"]; ?>
+          <br>
+          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[0]['id']?>.png">
+          <?php echo $character_spells[0]["description"]; ?>
+          <br>
+          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[1]['id']?>.png">
+          <?php echo $character_spells[1]["description"]; ?>
+          <br>
+          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[2]['id']?>.png">
+          <?php echo $character_spells[2]["description"]; ?>
+          <br>
+          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[3]['id']?>.png">
+          <?php echo $character_spells[3]["description"]; ?>
+          <br>
+          
+        
 
         </p>
       
   </body>
 </html>
+
+
+
+
+
+

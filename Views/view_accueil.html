@@ -18,7 +18,7 @@
 			<nav>
 				<ul>
 					<li><a href="?controller=inscription">Objets</a></li>
-					<li><a href="Views/view_boutique.html">Sorts d'invocateurs</a></li>
+					<li><a href="?controller=sorts_d_invocateur">Sorts d'invocateurs</a></li>
 					<li><a href="Views/view_boutique.html">Modes de jeu</a></li>
 					<li><a href="Views/test.php">page test</a></li>
 
@@ -34,20 +34,29 @@
 
 		<!-- <?php var_dump($data)?> -->
 	<form action="?controller=details_personnages" method="post">
-		<?php foreach($data as $cle => $value):  ?>
-		<a href="?controller=details_personnages&name=<?=$value['name']?>" name="<?= $value['name']?>"> <?= $value["name"] ?> </a>
+		<?php foreach($data as $cle => $value):  
+		$nom = str_replace(" ","",$value['name']);
+		$nom = str_replace(".","",$nom);
+		$pos = strpos($nom,"'");
+		if($pos === false){
+		}
+		else{
+			$nom = str_replace("'","",$nom);
+			$nom = strtolower($nom);
+			$nom = ucwords($nom);
+		}
 		
+		?>
+		<a href="?controller=details_personnages&name=<?=$nom?>" name="<?= $value['name']?>">
+			<img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/champion/<?=$nom?>.png">
+
+			<?= $value["name"] ?>
+		</a>
+
 		<br>
 		<?php endforeach; ?>
 	</form>
 	</p>
-
-
-
-
-
-
-
 	<footer>
 		<div id="dans_footer">
 			<div id="contact">
