@@ -68,14 +68,15 @@ class Model
     return $informations;
   }
 
-  public function get_information_personnages(): ?array
+  public function get_summoner_spells(): ?array
   {
-    $informations = $this->get_information();
-    foreach ($informations as $cle => $value) {
-      $information_personnages[$cle] = $value;
-    }
-    return $information_personnages;
+    $adresse = "http://ddragon.leagueoflegends.com/cdn/11.21.1/data/fr_FR/summoner.json";
+    $obj = json_decode(file_get_contents($adresse), true);
+    return $obj;
   }
+
+  
+
 
   public function add_info()
   {
