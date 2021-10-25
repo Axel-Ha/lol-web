@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 	<meta charset="utf-8" />
@@ -10,17 +10,11 @@
 </head>
 
 <body>
-	<header class="container">
+	<header>
 		<div class="container">
-			<a href="?controller=accueil"><img src="Content/image\logo_league_of_legends.jpg" alt="Logo WYES"
-					title="Logo: WYES" /></a>
-
 			<nav>
 				<ul>
-					<li><a href="?controller=inscription">Objets</a></li>
 					<li><a href="?controller=sorts_d_invocateur">Sorts d'invocateurs</a></li>
-					<li><a href="Views/view_boutique.html">Modes de jeu</a></li>
-					<li><a href="Views/test.php">page test</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -28,40 +22,50 @@
 
 
 
-	<p>
+	<h1 class="container">
 		Voici la liste des personnages
-
 		<!-- <?php var_dump($data)?> -->
-	<form action="?controller=details_personnages" method="post">
-		<?php foreach($data as $cle => $value):  
-		$nom = str_replace(" ","",$value['name']);
-		$nom = str_replace(".","",$nom);
-		$pos = strpos($nom,"'");
-		if($pos === false){
-		}
-		else{
-			$nom = str_replace("'","",$nom);
-			$nom = strtolower($nom);
-			$nom = ucwords($nom);
-		}
-		
-		?>
-		<a href="?controller=details_personnages&name=<?=$nom?>" name="<?= $value['name']?>">
-			<img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/champion/<?=$nom?>.png">
+	</h1>
 
-			<?= $value["name"] ?>
-		</a>
-
-		<br>
-		<?php endforeach; ?>
+	<form action="?controller=details_personnages" method="post" class="parent-personnages-liste">
+		<div class="personnages-liste">
+			<?php foreach($data as $cle => $value):  
+			$id = $value['id'];
+			?>
+			<div class="image-et-nom">
+				<a href="?controller=details_personnages&name=<?=$id?>">
+					<img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/champion/<?=$id?>.png">
+				</a>
+				<p>
+					<?= $value["name"] ?>
+				</p>
+			</div>	
+			<br>
+			<?php endforeach; ?>
+		</div>
 	</form>
-	</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<footer>
 		<div id="dans_footer">
 			<div id="contact">
 				<h1>Contact</h1>
 				<p>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></p>
-				<p>Pour plus d'information, vous pouvez nous retrouver <a href="http://wyes.fr/">ICI</a></p>
 			</div>
 
 			<div id="suivez-nous">
@@ -69,13 +73,6 @@
 				<p>
 					<a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
 							title="Twitter"></a>
-				</p>
-			</div>
-
-			<div id="sites_wyes">
-				<h1>Notre Site</h1>
-				<p>
-					<a href="http://wyes.fr/">WYES : When Your Eyes Speak</a>
 				</p>
 			</div>
 		</div>

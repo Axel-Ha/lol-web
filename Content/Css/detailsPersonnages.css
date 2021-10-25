@@ -28,28 +28,6 @@
     font-style: normal;
 }
 
-
-/* Corps de la page */
-
-body  
-{
-	background: url("images/ombre.png") repeat-x top, url("images/fond_page_jaune.png");
-	font-family: "Trebuchet MS", Arial;
-	color: black;
-}
-
-#bloc_page
-{
-    width: 950px;
-    margin: auto;
-}
-
-section h1, footer h1, nav a
-{
-	font-family: Dayrom;
-}
-
-
 /* Header: En-tête de la page */
 
 header
@@ -59,19 +37,9 @@ header
 	align-items: flex-end; /* Aligne en bas mon logo et ma navigation */
 }
 
-#logo
-{
-	margin-left: 20px;
-	margin-top: 20px;
-	display: flex;
+.container{
+    width: 10%;
 }
-
-#logo img
-{
-	width: 280px;
-	height: 125px;
-}
-
 
 /* Nav: Navigation Transversale de la page */
 
@@ -94,28 +62,6 @@ nav a
 	text-decoration: none; /* Cela enlève le soulignement */
 }
 
-nav a:hover
-{
-	color: maroon;
-	text-decoration: underline maroon;
-}
-
-
-/* Section: Corps */
-
-section
-{
-    display: flex;
-    margin-top: 70px;
-}
-
-/* Article */
-
-article
-{
-    margin-left: 10px; 
-    margin-right: 10px; 
-}
 
 
 /* Footer: le bas de la page */
@@ -124,7 +70,9 @@ footer
 {
     margin-top: 55px;
     display: flex;
+
     background: url("images/ico_top.png") no-repeat top center, url("images/separateur.png") repeat-x top, url("images/ombre.png") repeat-x top;
+    justify-content: center;
 }
 
 footer #dans_footer
@@ -133,6 +81,7 @@ footer #dans_footer
     margin-left: 10px;
     margin-right: 55px;
     display: flex;
+    flex-direction: row;
 }
 
 footer h1
@@ -161,28 +110,13 @@ footer a:hover
     text-decoration: underline maroon;
 }
 
-#contact
-{
-    margin-left: 10px; 
+    
+#suivez-nous {
+    margin-left: 80px;
+    margin-right: 72px;
 }
 
-#suivez-nous
-{
-    margin-left: 80px; 
-    margin-right: 72px; 
-}
-
-#suivez-nous img
-{
+#suivez-nous img {
     width: 70px;
     margin-right: 5px;
 }
-
-#sites_wyes
-{
-    margin-left: 30px;
-    margin-right: 10px;
-}
-    
-
-/* Fin de la page Boutique */

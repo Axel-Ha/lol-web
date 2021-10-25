@@ -44,7 +44,7 @@ class Model
     return self::$instance;
   }
 
-  public function get_information(): ?array
+  public function get_informations(): ?array
   {
     $obj = json_decode(file_get_contents('http://ddragon.leagueoflegends.com/cdn/11.20.1/data/fr_FR/champion.json'), true);
     $index = 0;
@@ -55,16 +55,16 @@ class Model
     return $informations;
   }
 
-  public function get_image_personnage($nom): ?array
+  public function get_informations_personnage($id): ?array
   {
-    $adresse = "http://ddragon.leagueoflegends.com/cdn/11.20.1/data/fr_FR/champion/". $nom. ".json";
+    $adresse = "http://ddragon.leagueoflegends.com/cdn/11.20.1/data/fr_FR/champion/". $id. ".json";
     $obj = json_decode(file_get_contents($adresse), true);
     $index = 0;
     foreach ($obj["data"] as $cle => $value) {
       $informations[$cle] = $value;
       $index++;
+      $informations["name"] = $cle;
     }
-    $informations["nom"] = $nom;
     return $informations;
   }
 
@@ -75,143 +75,5 @@ class Model
     return $obj;
   }
 
-  
 
-
-  public function add_info()
-  {
-    try {
-      $req = $this->bd->prepare('INSERT INTO users(mail,role,mdp) VALUES (:mail,:role,:mdp)');
-      $reqId = $this->bd->prepare('SELECT id from users where mail=:mail ');
-
-      if ($_POST['role'] === "aidant") {
-        $requete = $this->bd->prepare('INSERT INTO aidant(nom,prenom,genre,id) VALUES (:nom,:prenom,:genre,:id)');
-      } elseif ($_POST['role'] === "medecin") {
-        $requete = $this->bd->prepare('INSERT INTO medecin(nom,prenom,genre,id) VALUES (:nom,:prenom,:genre,:id)');
-      } else {
-        $requete = $this->bd->prepare('INSERT INTO patient(nom,prenom,genre,id) VALUES (:nom,:prenom,:genre,:id)');
-      }
-
-      $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-
-      $req->execute(array(
-        "mail" => $_POST["mail"],
-        "role" => $_POST["role"],
-        "mdp" => $mdp
-      ));
-
-      $reqId->execute(array("mail" => $_POST["mail"]));
-
-      $id = $reqId->fetch();
-
-
-      //Exécution de la requête
-      $requete->execute(array(
-        "nom" => $_POST["nom"],
-        "prenom" => $_POST["prenom"],
-        "genre" => $_POST["genre"],
-        "id" => $id['id']
-      ));
-    } catch (PDOException $e) {
-      die('Echec add_info, erreur n°' . $e->getCode() . ':' . $e->getMessage());
-    }
-  }
-
-
-
-  /**
-   * Retourne null si mdp ou mail incorrecte sinon on retourne les informations de la personne
-   */
-  public function verifco($mail, $mdp)
-  {
-    try {
-
-      $req = $this->bd->prepare('SELECT * from users where mail = :mail');
-      $req->execute(array('mail' => $mail));
-
-      $info = $req->fetch();
-      if ($info === false) {
-        return null;
-      } else {
-        $mdpBDD = $info['mdp'];
-        $mdpEgaux =  password_verify($mdp, $mdpBDD);
-        if ($mdpEgaux === true) {
-          if ($info['role'] === 'medecin') {
-            $requete = $this->bd->prepare('SELECT nom,prenom from medecin where id = :id');
-            $requete->execute(array('id' => $info['id']));
-            $info2 = $requete->fetch();
-          }
-
-          if ($info['role'] === 'patient') {
-            $requete = $this->bd->prepare('SELECT nom,prenom from patient where id = :id');
-            $requete->execute(array('id' => $info['id']));
-            $info2 = $requete->fetch();
-          }
-
-          if ($info['role'] === 'aidant') {
-            $requete = $this->bd->prepare('SELECT nom,prenom from aidant where id = :id');
-            $requete->execute(array('id' => $info['id']));
-            $info2 = $requete->fetch();
-          }
-
-          return $infoPersonne = array_merge($info, $info2);
-        } else {
-          return null;
-        }
-      }
-    } catch (PDOException $e) {
-      die('Echec verifco, erreur n°' . $e->getCode() . ':' . $e->getMessage());
-    }
-  }
-
-  public function send($destinataire, $message)
-  {
-
-    try {
-      $id_destinataire = $this->bd->prepare('SELECT id FROM users WHERE mail = ?');
-      $id_destinataire->execute(array($destinataire));
-      $dest_exist = $id_destinataire->rowCount();
-      if ($dest_exist == 1) {
-        $id_destinataire = $id_destinataire->fetch();
-        $id_destinataire = $id_destinataire['id'];
-        $ins = $this->bd->prepare('INSERT INTO messages(id_expediteur,id_destinataire,message) VALUES (?,?,?)');
-        $ins->execute(array($_SESSION['id'], $id_destinataire, $message));
-        $error = "Votre message a bien été envoyé !";
-      } else {
-        $error = "Cet utilisateur n'existe pas...";
-      }
-
-      $destinataires = $this->bd->query('SELECT mail FROM users ORDER BY mail');
-      return $error;
-    } catch (PDOException $e) {
-      die('Echec send, erreur n°' . $e->getCode() . ':' . $e->getMessage());
-    }
-  }
-
-  public function reception()
-  {
-    try {
-      //on recup les msg du mec connecter, donc en vrai cest le destinataire
-      $msg = $this->bd->prepare('SELECT mail,id_destinataire,message FROM messages inner join users ON messages.id_expediteur = users.id where id_destinataire = ?');
-      $msg->execute(array($_SESSION['id']));
-      //on recup le nombre de msg quil a recu
-      $msg_nbr = $msg->rowCount();
-      $info_messages = $msg->fetchall();
-
-      $messages = [];
-
-      $ligne_message = [];
-
-      foreach ($info_messages as $key => $vals) {
-        $ligne_message['text'] = $vals['message'];
-        $ligne_message['expediteur'] = $vals['mail'];
-        array_push($messages, $ligne_message);
-      }
-
-      $tab = ['messages' => $messages];
-      return $tab;
-    } catch (PDOException $e) {
-      die('Echec reception, erreur n°' . $e->getCode() . ':' . $e->getMessage());
-    }
-  }
 }

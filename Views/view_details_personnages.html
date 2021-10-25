@@ -1,54 +1,92 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <!-- Remplacer le titre par le nom du personnage -->
-        <title>Détails </title>
+<html lang="fr">
 
-        <h1>            
-          <?php
-            $nom = $data["nom"];
-            echo $nom;
-          ?>
-        </h1>
-        <h2>
-          <?php 
-          echo $data[$nom]["title"];
-          ?>
-        </h2>
-    </head>
-    <body>
-        <p>
-          <?php 
+<head>
+  <meta charset="utf-8" />
+  <!-- Remplacer le titre par le nom du personnage -->
+  <title>
+    <?=$data["name"]?>
+  </title>
+  <link rel="stylesheet" href="Content/Css/detailsPersonnages.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="?controller=accueil">Accueil</a></li>
+          <li><a href="?controller=sorts_d_invocateur">Sorts d'invocateurs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h1>
+    <?php
+          $nom = $data["name"];
+          echo $nom;
+        ?>
+  </h1>
+  <h2>
+    <?php 
+      echo $data[$nom]["title"];
+     ?>
+  </h2>
+
+
+
+
+    <h3 class="container">
+      <?php 
+        $tag = $data[$nom]["tags"]; 
+      ?>
+      <p>
+        <?php echo $tag[0]?>
+      </p>
+
+    </h3>
+  <p>
+    <?php 
           $character_spells = $data[$nom]["spells"];
           $character_passive = $data[$nom]["passive"]["image"]["full"];
           
-          ?>
-          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>">
-          <?php echo $data[$nom]["passive"]["description"]; ?>
-          <br>
-          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[0]['id']?>.png">
-          <?php echo $character_spells[0]["description"]; ?>
-          <br>
-          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[1]['id']?>.png">
-          <?php echo $character_spells[1]["description"]; ?>
-          <br>
-          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[2]['id']?>.png">
-          <?php echo $character_spells[2]["description"]; ?>
-          <br>
-          <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[3]['id']?>.png">
-          <?php echo $character_spells[3]["description"]; ?>
-          <br>
-          
-        
+    ?>
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>">
+    <?php echo $data[$nom]["passive"]["description"]; ?>
+    <br>
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[0]['id']?>.png">
+    <?php echo $character_spells[0]["description"]; ?>
+    <br>
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[1]['id']?>.png">
+    <?php echo $character_spells[1]["description"]; ?>
+    <br>
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[2]['id']?>.png">
+    <?php echo $character_spells[2]["description"]; ?>
+    <br>
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[3]['id']?>.png">
+    <?php echo $character_spells[3]["description"]; ?>
+    <br>
 
-        </p>
-      
-  </body>
+
+
+  </p>
+
+  <footer>
+    <div id="dans_footer">
+      <div id="contact">
+        <h1>Contact</h1>
+        <p>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></p>
+
+        <div id="suivez-nous">
+          <h1>Suivez-Nous</h1>
+          <p>
+            <a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
+                title="Twitter"></a>
+          </p>
+        </div>
+  </footer>
+</body>
+
+
 </html>
-
-
-
-
-
-

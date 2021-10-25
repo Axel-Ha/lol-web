@@ -9,12 +9,7 @@ class Controller_details_personnages extends Controller
   public function action_details_personnages()
   {
     $m = Model::getModel();
-    $personnage = $m->get_image_personnage($_GET["name"]);
-
-    // var_dump($data);
-
-    // $data = $m->get_information_personnages();
-    // $personnage = $m->get_personnage($data,$nom);
+    $personnage = $m->get_informations_personnage($_GET["name"]);
     $this->render("details_personnages", $personnage);
   }
 }
