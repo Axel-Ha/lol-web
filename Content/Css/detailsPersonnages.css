@@ -28,8 +28,8 @@
     font-style: normal;
 }
 
-/* Header: En-tête de la page */
 
+/* Header: En-tête de la page */
 header
 {
 	background: url("images/separateur.png") repeat-x bottom;
@@ -37,9 +37,7 @@ header
 	align-items: flex-end; /* Aligne en bas mon logo et ma navigation */
 }
 
-.container{
-    width: 10%;
-}
+
 
 /* Nav: Navigation Transversale de la page */
 
@@ -62,6 +60,33 @@ nav a
 	text-decoration: none; /* Cela enlève le soulignement */
 }
 
+.sorts-liste{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+
+}
+
+.sorts{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 1%;
+}
+
+.texte{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 80%;
+}
+
+
+.img{
+    width: 100px;
+}
+
 
 
 /* Footer: le bas de la page */
@@ -70,7 +95,6 @@ footer
 {
     margin-top: 55px;
     display: flex;
-
     background: url("images/ico_top.png") no-repeat top center, url("images/separateur.png") repeat-x top, url("images/ombre.png") repeat-x top;
     justify-content: center;
 }
