@@ -68,7 +68,6 @@ footer
 {
     margin-top: 55px;
     display: flex;
-    background: url("images/ico_top.png") no-repeat top center, url("images/separateur.png") repeat-x top, url("images/ombre.png") repeat-x top;
     justify-content: center;
 }
 

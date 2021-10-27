@@ -1,12 +1,4 @@
 
-
-/* Définition des polices personnalisées */
-
-/* On va sur le site FontSquirrel qui propose un générateur de polices avec @font-face.
-   L'outil nous donne toutes les versions de polices pour les différents navigateurs et
-   nous donne directement le code CSS */
-
-
 * {
     box-sizing: border-box;
 }
@@ -74,7 +66,6 @@ nav a:hover {
 footer {
     margin-top: 55px;
     display: flex;
-    background: url("images/ico_top.png") no-repeat top center, url("images/separateur.png") repeat-x top, url("images/ombre.png") repeat-x top;
     justify-content: center;
 }
 
@@ -121,42 +112,9 @@ footer a:hover {
     margin-right: 5px;
 }
 
-#sites_wyes {
-    margin-left: 30px;
-    margin-right: 10px;
-}
-
 /* Fin de la page d'Accueil */
 
-/* PARTIE RESPONSIVE */
 
-@media all and (max-width: 1024px) {
-
-    /* Page qui s'adapte en fonction de la taille automatiquement */
-    #bloc_page {
-        width: auto;
-    }
-
-
-    /* On s'occupe de la navigation */
-    nav {
-        width: auto;
-        text-align: left;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav li {
-        padding-left: 4px;
-    }
-
-    nav a {
-        font-size: 1.3em;
-    }
-
-}
 
 
 /* Quand on est sur mobile */
@@ -187,22 +145,4 @@ footer a:hover {
         font-size: 1.3em;
     }
 
-
-    /* On enlève la bannière pcq elle n'est pas très utile sur petit écran */
-    #banniere_wyes {
-        display: none;
-    }
-
-
-    /* Le côter aside va se situer en dessous du texte à propos de WYES */
-    section {
-        flex-direction: column;
-        margin-top: 5px;
-    }
-
-    article,
-    aside {
-        width: auto;
-        margin-bottom: 15px;
-    }
 }
