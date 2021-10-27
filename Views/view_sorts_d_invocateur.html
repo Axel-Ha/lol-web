@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <!-- Ca c'est pour les mobiles -->
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="Content/Css/inscription.css" />
+  <link rel="stylesheet" href="Content/Css/sortsInvocateur.css" />
   <title>Sorts d'invocateur</title>
 </head>
 
@@ -21,51 +22,59 @@
   </header>
 
 
-  <p>
-    <?php 
-      foreach($data as  $cle => $value):
-      $summoner_name = $data[$cle]["name"];
-    ?>
-    <strong>
-      <?php 
-        switch($data[$cle]["id"]){
-          case 'SummonerPoroThrow':
-            break;
 
-          case 'SummonerPoroRecall':
-            break;
+  <?php 
+        foreach($data as  $cle => $value):
+        $summoner_name = $data[$cle]["name"];
+      ?>
+  <?php 
+          switch($data[$cle]["id"]){
+            case 'SummonerPoroThrow':
+              break;
+
+            case 'SummonerPoroRecall':
+              break;
+              
+            case 'SummonerSnowURFSnowball_Mark':
+              break;
+              
+            case 'SummonerSnowball':
+              break;
+
+            case 'Summoner_UltBook_Placeholder':
+              break;
             
-          case 'SummonerSnowURFSnowball_Mark':
-            break;
-            
-          case 'SummonerSnowball':
-            break;
+            default:
+        ?>
+  <div class="imageEtNom">
+    <div class="summoner">
+      <img src="http://ddragon.leagueoflegends.com/cdn/11.21.1/img/spell/<?=$cle?>.png">
+      <p class="texte">
+        <strong>
+          <?php echo $summoner_name; ?>
+        </strong>
+        <?php echo $data[$cle]["description"];
+          } ?>
+      </p>
+    </div>
+  </div>
+  <?php endforeach?>
 
-          case 'Summoner_UltBook_Placeholder':
-            break;
-          
-          default:
-            echo $summoner_name; ?>
-            </strong>
-            <img src="http://ddragon.leagueoflegends.com/cdn/11.21.1/img/spell/<?=$cle?>.png">        
-           <?php echo $data[$cle]["description"];
-        }
-          ?>
+  <footer>
+    <div id="dans_footer">
+      <div id="contact">
+        <h1>Contact</h1>
+        <p>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></p>
 
-    </br>
-    <br>
-    <?php endforeach?>
-
-
-
-  </p>
-
-  <!-- var_dump($data); -->
-
-
-
-
-
+        <div id="suivez-nous">
+          <h1>Suivez-Nous</h1>
+          <p>
+            <a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
+                title="Twitter"></a>
+          </p>
+        </div>
+  </footer>
 </body>
+
 
 </html>
