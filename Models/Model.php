@@ -3,35 +3,10 @@
 class Model
 {
 
-
-  /**
-   * Attribut contenant l'instance PDO
-   */
-  private $bd;
-
-
   /**
    * Attribut statique qui contiendra l'unique instance de Model
    */
   private static $instance = null;
-
-
-  /**
-   * Constructeur : effectue la connexion à la base de données.
-   */
-  private function __construct()
-  {
-
-    try {
-      include 'Utils/credentials.php';
-      $this->bd = new PDO("$driver:host=$host;dbname=$dbname", $user, $login);
-      $this->bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $this->bd->query("SET nameS 'utf8'");
-    } catch (PDOException $e) {
-      die('Echec connexion, erreur n°' . $e->getCode() . ':' . $e->getMessage());
-    }
-  }
-
 
   /**
    * Méthode permettant de récupérer un modèle car le constructeur est privé (Implémentation du Design Pattern Singleton)
