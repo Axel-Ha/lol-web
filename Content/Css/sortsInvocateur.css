@@ -1,16 +1,19 @@
 
-/* Header: En-tête de la page */
-header
-{
-	display: flex; /* Mettre tout l'en-tête sur la même ligne */
-	align-items: flex-end; /* Aligne en bas mon logo et ma navigation */
-    margin-bottom: 2%;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
 }
 
-
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 2%;
+  }
 
 /* Nav: Navigation Transversale de la page */
-
 nav ul
 {
 	list-style-type: none; /* Enlève les puces */
@@ -35,6 +38,7 @@ nav a
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    
 }
 
 .summoner{
@@ -42,9 +46,14 @@ nav a
     flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 1%;
-    margin-left: 3%;
+
+    
 }
 
+.summoner-img{
+    width: 100px;
+    height: 100px;
+}
 .texte{
     display: flex;
     flex-wrap: wrap;
@@ -53,64 +62,3 @@ nav a
     width: 80%;
 }
 
-
-
-
-
-
-
-
-/* Footer: le bas de la page */
-
-footer
-{
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
-}
-
-footer #dans_footer
-{
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 55px;
-    display: flex;
-    flex-direction: row;
-}
-
-footer h1
-{
-    text-align: center;
-    font-size: 1.8em;
-}
-
-footer p
-{
-    text-align: center;
-    font-style: italic;
-    font-size: 1em;
-}
-
-footer a
-{
-    color: navy;
-    text-decoration: none;
-    font-size: 1.5em;
-}
-
-footer a:hover
-{
-    color: maroon;
-    text-decoration: underline maroon;
-}
-
-    
-#suivez-nous {
-    margin-left: 80px;
-    margin-right: 72px;
-}
-
-#suivez-nous img {
-    width: 70px;
-    margin-right: 5px;
-}

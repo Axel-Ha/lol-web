@@ -6,27 +6,25 @@
 	<!-- Ca c'est pour les mobiles -->
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="Content/Css/accueil.css" />
+	<link rel="stylesheet" href="Content/Css/footer.css" />
 	<title>Liste personnages League of Legends</title>
 </head>
 
 <body>
 	<header>
-		<div class="container">
-			<nav>
+		<div>
+			<nav class="container">
 				<ul>
+					<li><a href="?controller=accueil">Accueil</a></li>
 					<li><a href="?controller=sorts_d_invocateur">Sorts d'invocateurs</a></li>
 				</ul>
 			</nav>
+			<h1 class="container">
+				Voici la liste des personnages
+				<!-- <?php var_dump($data)?> -->
+			</h1>
 		</div>
 	</header>
-
-
-
-	<h1 class="container">
-		Voici la liste des personnages
-		<!-- <?php var_dump($data)?> -->
-	</h1>
-
 	<form action="?controller=details_personnages" method="post" class="parent-personnages-liste">
 		<div class="personnages-liste">
 			<?php foreach($data as $cle => $value):  
@@ -47,23 +45,21 @@
 
 
 
-
 	<footer>
 		<div id="dans_footer">
-			<div id="contact">
-				<h1>Contact</h1>
-				<p>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></p>
-			</div>
-
+		  <div id="contact">
+			<h1>Contact</h1>
+			<span>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></span>
+	
 			<div id="suivez-nous">
-				<h1>Suivez-Nous</h1>
-				<p>
-					<a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
-							title="Twitter"></a>
-				</p>
+			  <h1>Suivez-Nous</h1>
+			  <span>
+				<a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
+					title="Twitter"></a>
+			  </span>
 			</div>
+		  </div>
 		</div>
-	</footer>
-</body>
-
+	  </footer>
+	</body>  
 </html>

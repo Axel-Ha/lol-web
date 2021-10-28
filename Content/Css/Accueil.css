@@ -4,12 +4,16 @@
 }
 
 .container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 50%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    
 }
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+  }
 
 .personnages-liste {
     flex-direction: row;
@@ -25,10 +29,6 @@
     justify-content: center;
 }
 
-header .container>nav {
-    justify-content: center;
-    display: flex;
-}
 
 .image-et-nom{
     display: flex;
@@ -61,88 +61,5 @@ nav a:hover {
 }
 
 
-/* Footer: le bas de la page */
-
-footer {
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
-}
-
-footer #dans_footer {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 55px;
-    display: flex;
-}
-
-footer h1 {
-    text-align: center;
-    font-size: 1.8em;
-}
-
-footer p {
-    text-align: center;
-    font-style: italic;
-    font-size: 1em;
-}
-
-footer a {
-    color: navy;
-    text-decoration: none;
-    font-size: 1.5em;
-}
-
-footer a:hover {
-    color: maroon;
-    text-decoration: underline maroon;
-}
-
-#contact {
-    margin-left: 10px;
-}
-
-#suivez-nous {
-    margin-left: 80px;
-    margin-right: 72px;
-}
-
-#suivez-nous img {
-    width: 70px;
-    margin-right: 5px;
-}
-
-/* Fin de la page d'Accueil */
 
 
-
-
-/* Quand on est sur mobile */
-
-@media all and (max-device-width: 480px) {
-
-    /* Page qui s'adapte en fonction de la taille automatiquement */
-    #bloc_page {
-        width: auto;
-    }
-
-
-    /* On s'occupe de la navigation */
-    nav {
-        width: auto;
-        text-align: left;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav li {
-        padding-left: 4px;
-    }
-
-    nav a {
-        font-size: 1.3em;
-    }
-
-}

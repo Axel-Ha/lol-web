@@ -8,12 +8,13 @@
     <?=$data["name"]?>
   </title>
   <link rel="stylesheet" href="Content/Css/detailsPersonnages.css" />
+  <link rel="stylesheet" href="Content/Css/footer.css" />
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <nav>
+    <div>
+      <nav class="container">
         <ul>
           <li><a href="?controller=accueil">Accueil</a></li>
           <li><a href="?controller=sorts_d_invocateur">Sorts d'invocateurs</a></li>
@@ -52,74 +53,60 @@
             $character_passive = $data[$nom]["passive"]["image"]["full"];
     ?>
   <div class="sorts-liste">
-
-    <div class="sorts">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>" 
-        class="img">
-      <p class="texte">
-       <strong><?php echo $data[$nom]["passive"]["name"]; ?></strong>
-        <br>
+    <div class="sort-ligne">
+      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>" class="sort-img">
+      <span class="sort-descriptions">
+        <strong>
+          <?php echo $data[$nom]["passive"]["name"]; ?>
+        </strong>
         <?php echo $data[$nom]["passive"]["description"]; ?>
-      </p>
+      </span>
     </div>
 
-    <div class="sorts">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[0]['id']?>.png"
-        class="img">
-        <p class="texte">
-          <strong><?php echo $character_spells[0]["name"]; ?></strong>
-          <br>
-          <?php echo $character_spells[0]["description"]; ?>
-        </p>
-      </div>
 
-    <div class="sorts">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[1]['id']?>.png"
-        class="img">
-        <p class="texte">
-          <strong><?php echo $character_spells[1]["name"]; ?></strong>
-          <br>
-          <?php echo $character_spells[1]["description"]; ?>
-        </p>
-      </div>
 
-    <div class="sorts">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[2]['id']?>.png"
-        class="img">
-        <p class="texte">
-          <strong><?php echo $character_spells[2]["name"]; ?></strong>
-          <br>
-          <?php echo $character_spells[2]["description"]; ?>
-        </p>
-      </div>
 
-    <div class="sorts">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[3]['id']?>.png"
-        class="img">
-        <p class="texte">
-          <strong><?php echo $character_spells[3]["name"]; ?></strong>
-          <br>
-          <?php echo $character_spells[3]["description"]; ?>
-        </p>
-      </div>
 
-  </div>
+    <?php for($i=0; $i<=3;$i++){ ?>
+    <div class="sort-ligne">
+      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[$i]['id']?>.png"
+        class="sort-img">
+      <span class="sort-descriptions">
+        <strong>
+          <?php echo $character_spells[$i]["name"]; ?>
+        </strong>
+        <?php echo $character_spells[$i]["description"]; ?>
+      </span>
+    </div>
+    <?php } ?>
 
-  <footer>
-    <div id="dans_footer">
-      <div id="contact">
-        <h1>Contact</h1>
-        <p>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></p>
 
-        <div id="suivez-nous">
-          <h1>Suivez-Nous</h1>
-          <p>
-            <a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
-                title="Twitter"></a>
-          </p>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+      <div id="dans_footer">
+        <div id="contact">
+          <h1>Contact</h1>
+          <span>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></span>
+
+          <div id="suivez-nous">
+            <h1>Suivez-Nous</h1>
+            <span>
+              <a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
+                  title="Twitter"></a>
+            </span>
+          </div>
         </div>
-  </footer>
+      </div>
+    </footer>
 </body>
-
 
 </html>

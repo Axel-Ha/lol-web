@@ -6,21 +6,21 @@
   <!-- Ca c'est pour les mobiles -->
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="Content/Css/sortsInvocateur.css" />
+  <link rel="stylesheet" href="Content/Css/footer.css" />
   <title>Sorts d'invocateur</title>
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <nav>
+    <div>
+      <nav class="container">
         <ul>
-          <li><a href="?controller=accueil">Liste Personnages</a></li>
+          <li><a href="?controller=accueil">Accueil</a></li>
           <li><a href="?controller=sorts_d_invocateur">Sorts d'invocateurs</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
 
 
   <?php 
@@ -48,14 +48,14 @@
         ?>
   <div class="imageEtNom">
     <div class="summoner">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.21.1/img/spell/<?=$cle?>.png">
-      <p class="texte">
+      <img src="http://ddragon.leagueoflegends.com/cdn/11.21.1/img/spell/<?=$cle?>.png" class="summoner-img">
+      <span class="texte">
         <strong>
           <?php echo $summoner_name; ?>
         </strong>
         <?php echo $data[$cle]["description"];
           } ?>
-      </p>
+      </span>
     </div>
   </div>
   <?php endforeach?>
@@ -64,17 +64,18 @@
     <div id="dans_footer">
       <div id="contact">
         <h1>Contact</h1>
-        <p>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></p>
+        <span>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></span>
 
         <div id="suivez-nous">
           <h1>Suivez-Nous</h1>
-          <p>
+          <span>
             <a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
                 title="Twitter"></a>
-          </p>
+          </span>
         </div>
+      </div>
+    </div>
   </footer>
-</body>
-
+</body>  
 
 </html>
