@@ -9,19 +9,10 @@
   </title>
   <link rel="stylesheet" href="Content/Css/detailsPersonnages.css" />
   <link rel="stylesheet" href="Content/Css/footer.css" />
+  <link rel="stylesheet" href="Content/Css/header.css" />
 </head>
 
-<body>
-  <header>
-    <div>
-      <nav class="container">
-        <ul>
-          <li><a href="?controller=accueil">Accueil</a></li>
-          <li><a href="?controller=sorts_d_invocateur">Sorts d'invocateurs</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<?php require_once("Views/view_header.html")?>
 
   <h1>
     <?php
@@ -80,33 +71,4 @@
     </div>
     <?php } ?>
 
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
-      <div id="dans_footer">
-        <div id="contact">
-          <h1>Contact</h1>
-          <span>Pour aller sur la page officiel, <a href="https://www.leagueoflegends.com/fr-fr/">cliquez ici</a></span>
-
-          <div id="suivez-nous">
-            <h1>Suivez-Nous</h1>
-            <span>
-              <a href="https://twitter.com/LoL_France"><img src="Content/image/twitter.png" alt="Twitter"
-                  title="Twitter"></a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </footer>
-</body>
-
-</html>
+    <?php require_once("Views/view_footer.html")?>

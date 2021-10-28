@@ -1,0 +1,20 @@
+/* Nav: Navigation Transversale de la page */
+
+nav ul
+{
+	list-style-type: none; /* Enlève les puces */
+	display: flex; /* Mettre tout sur une ligne */
+	margin-left: 65px;
+}
+
+nav li
+{
+	margin-right: 25px;
+}
+
+nav a
+{
+	font-size: 1.62em;
+	color: navy;
+	text-decoration: none; /* Cela enlève le soulignement */
+}
