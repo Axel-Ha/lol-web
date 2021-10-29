@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <!-- Remplacer le titre par le nom du personnage -->
+  <?php $nom = $data["name"];?>
   <title>
-    <?=$data["name"]?>
+    <?=$data[$nom]["name"]?>
   </title>
   <link rel="stylesheet" href="Content/Css/detailsPersonnages.css" />
   <link rel="stylesheet" href="Content/Css/footer.css" />
@@ -14,61 +15,55 @@
 
 <?php require_once("Views/view_header.html")?>
 
-  <h1>
-    <?php
-          $nom = $data["name"];
-          echo $nom;
-        ?>
-  </h1>
-  <h2>
-    <?php 
-      echo $data[$nom]["title"];
-     ?>
-  </h2>
-
-
-
-
-  <h3>
-    <?php 
-        $tag = $data[$nom]["tags"]; 
-      ?>
-    <p>
-      <?php echo $tag[0]?>
-    </p>
-
-  </h3>
-
+<img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/champion/<?=$data[$nom]['id']?>.png">
+<h1>
+  <?php echo $data[$nom]["name"]; ?>
+</h1>
+<h2>
   <?php 
-            $character_spells = $data[$nom]["spells"];
-            $character_passive = $data[$nom]["passive"]["image"]["full"];
-    ?>
-  <div class="sorts-liste">
-    <div class="sort-ligne">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>" class="sort-img">
-      <span class="sort-descriptions">
-        <strong>
-          <?php echo $data[$nom]["passive"]["name"]; ?>
-        </strong>
-        <?php echo $data[$nom]["passive"]["description"]; ?>
-      </span>
-    </div>
+    echo $data[$nom]["title"];
+  ?>
+</h2>
+<h3>
+  <?php 
+    $tag = $data[$nom]["tags"]; 
+    echo $tag[0];
+  ?>
+</h3>
+<p class="lore">
+  <?php echo $data[$nom]["lore"]; ?>
+</p>
+
+
+<?php 
+  $character_spells = $data[$nom]["spells"];
+  $character_passive = $data[$nom]["passive"]["image"]["full"];
+?>
+<div class="sorts-liste">
+  <div class="sort-ligne">
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>" class="sort-img">
+    <span class="sort-descriptions">
+      <strong>
+        <?php echo $data[$nom]["passive"]["name"]; ?>
+      </strong>
+      <?php echo $data[$nom]["passive"]["description"]; ?>
+    </span>
+  </div>
 
 
 
 
 
-    <?php for($i=0; $i<=3;$i++){ ?>
-    <div class="sort-ligne">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[$i]['id']?>.png"
-        class="sort-img">
-      <span class="sort-descriptions">
-        <strong>
-          <?php echo $character_spells[$i]["name"]; ?>
-        </strong>
-        <?php echo $character_spells[$i]["description"]; ?>
-      </span>
-    </div>
-    <?php } ?>
+  <?php for($i=0; $i<=3;$i++){ ?>
+  <div class="sort-ligne">
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[$i]['id']?>.png" class="sort-img">
+    <span class="sort-descriptions">
+      <strong>
+        <?php echo $character_spells[$i]["name"]; ?>
+      </strong>
+      <?php echo $character_spells[$i]["description"]; ?>
+    </span>
+  </div>
+  <?php } ?>
 
-    <?php require_once("Views/view_footer.html")?>
+  <?php require_once("Views/view_footer.html")?>

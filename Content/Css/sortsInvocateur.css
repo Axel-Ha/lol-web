@@ -58,7 +58,7 @@ nav a
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-left: 1%;
-    width: 80%;
+    margin-left: 10px;
+    width: 40%;
 }
 

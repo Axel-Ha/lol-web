@@ -20,6 +20,12 @@ body {
 
 }
 
+.lore{
+    width: 40%;
+    
+}
+
+
 .sort-ligne{
     display: flex;
     flex-wrap: wrap;
@@ -32,7 +38,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 35%;
+    width: 40%;
 }
 
 

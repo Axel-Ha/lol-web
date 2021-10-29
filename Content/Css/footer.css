@@ -5,9 +5,6 @@ footer {
 }
 
 footer #dans_footer {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 55px;
     display: flex;
 }
 
@@ -28,10 +25,6 @@ footer a {
     font-size: 1.5em;
 }
 
-footer a:hover {
-    color: maroon;
-    text-decoration: underline maroon;
-}
 
 #contact {
     margin-left: 10px;
@@ -44,5 +37,6 @@ footer a:hover {
 
 #suivez-nous img {
     width: 70px;
-    margin-right: 5px;
+    display: flex;
+    margin-left: 20px;
 }
