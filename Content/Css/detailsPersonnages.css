@@ -1,7 +1,5 @@
 
 .container {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     
 }
@@ -12,41 +10,33 @@ body {
     margin-left: 2%;
   }
 
-.sorts-liste{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    
-
-}
-
 .lore{
     width: 40%;
     
 }
-
-
 .sort-ligne{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     margin-bottom: 1%;
     
 }
 
 .sort-descriptions{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     width: 40%;
 }
 
 
 .sort-img{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     margin-right: 10px;
     width: 100px;
     height: 100px;
+}
+
+
+.ligne {
+    display: flex;
+    flex-direction: row;
+}
+
+.colonne {
+    display: flex;
+    flex-direction: column;
 }

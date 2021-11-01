@@ -39,10 +39,10 @@
   $character_spells = $data[$nom]["spells"];
   $character_passive = $data[$nom]["passive"]["image"]["full"];
 ?>
-<div class="sorts-liste">
-  <div class="sort-ligne">
-    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>" class="sort-img">
-    <span class="sort-descriptions">
+<div class="colonne">
+  <div class="sort-ligne ligne">
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>" class="sort-img ligne">
+    <span class="sort-descriptions colonne">
       <strong>
         <?php echo $data[$nom]["passive"]["name"]; ?>
       </strong>
@@ -55,9 +55,9 @@
 
 
   <?php for($i=0; $i<=3;$i++){ ?>
-  <div class="sort-ligne">
-    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[$i]['id']?>.png" class="sort-img">
-    <span class="sort-descriptions">
+  <div class="sort-ligne ligne">
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[$i]['id']?>.png" class="sort-img ligne">
+    <span class="sort-descriptions colonne">
       <strong>
         <?php echo $character_spells[$i]["name"]; ?>
       </strong>

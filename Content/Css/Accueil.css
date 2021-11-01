@@ -16,50 +16,22 @@ body {
   }
 
 .personnages-liste {
-    flex-direction: row;
     flex-wrap: wrap;
     width: 50%;
-    display: flex;
     justify-content:space-around;
 }
 
 .parent-personnages-liste {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 
+.ligne {
+    display: flex;
+    flex-direction: row;
+}
 
-.image-et-nom{
+.colonne {
     display: flex;
     flex-direction: column;
 }
-
-/* Nav: Navigation Transversale de la page */
-
-nav ul {
-    list-style-type: none;
-    /* Enlève les puces */
-    display: flex;
-    /* Mettre tout sur une ligne */
-}
-
-nav li {
-    margin-right: 25px;
-}
-
-nav a {
-    font-size: 1.62em;
-    color: navy;
-    text-decoration: none;
-    /* Cela enlève le soulignement */
-}
-
-nav a:hover {
-    color: maroon;
-    text-decoration: underline maroon;
-}
-
-
-
 

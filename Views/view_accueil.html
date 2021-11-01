@@ -13,12 +13,12 @@
 
 <?php require_once("Views/view_header.html")?>
 	<h1 class="container">Personnages</h1>
-	<form action="?controller=details_personnages" method="post" class="parent-personnages-liste">
-		<div class="personnages-liste">
+	<form action="?controller=details_personnages" method="post" class="parent-personnages-liste ligne">
+		<div class="personnages-liste ligne ">
 			<?php foreach($data as $cle => $value):  
 			$id = $value['id'];
 			?>
-			<div class="image-et-nom">
+			<div class="colonne">
 				<a href="?controller=details_personnages&name=<?=$id?>">
 					<img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/champion/<?=$id?>.png">
 				</a>

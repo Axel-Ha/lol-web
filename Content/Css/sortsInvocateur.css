@@ -1,64 +1,55 @@
-
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 body {
-    font-family: Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 16px;
-    margin-left: 2%;
-  }
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 2%;
+}
 
 /* Nav: Navigation Transversale de la page */
-nav ul
-{
-	list-style-type: none; /* Enlève les puces */
-	display: flex; /* Mettre tout sur une ligne */
-	margin-left: 65px;
+nav ul {
+  list-style-type: none; /* Enlève les puces */
+  display: flex; /* Mettre tout sur une ligne */
+  margin-left: 65px;
 }
 
-nav li
-{
-	margin-right: 25px;
+nav li {
+  margin-right: 25px;
 }
 
-nav a
-{
-	font-size: 1.62em;
-	color: navy;
-	text-decoration: none; /* Cela enlève le soulignement */
+nav a {
+  font-size: 1.62em;
+  color: navy;
+  text-decoration: none; /* Cela enlève le soulignement */
 }
 
-
-.imageEtnom{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    
+.imageEtnom {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.summoner{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-bottom: 1%;
-
-    
+.summoner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 1%;
 }
 
-.summoner-img{
-    width: 100px;
-    height: 100px;
-}
-.texte{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 10px;
-    width: 40%;
+.summoner-img {
+  width: 100px;
+  height: 100px;
 }
 
+.texte {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 40%;
+}
