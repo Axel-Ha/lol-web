@@ -1,7 +1,7 @@
 Ce projet est codé en PhP. Il utilise l'api d dragon leagueoflegends pour recuperer la liste des personnage etc. 
 
-![Liste personnages](https://raw.githubusercontent.com/kidax/Projet-site-League-of-legends/master/Content/image/liste_personnages.png?token=ALIXSQM3IH2L4UA5MQYSYYLBRJSBI)  
-![Presentation personnage](https://raw.githubusercontent.com/kidax/Projet-site-League-of-legends/master/Content/image/presentation_personnage.png?token=ALIXSQJ5LIKY4ZO7UQD6GG3BRJSC4)  
+![Liste personnages](https://raw.githubusercontent.com/kidax/lol-web/master/Content/image/liste_personnages.png?token=ALIXSQLKRWCKUGHQ5G4PSFLBRJXUM)  
+![Presentation personnage](https://raw.githubusercontent.com/kidax/lol-web/master/Content/image/presentation_personnage.png?token=ALIXSQKXQTGF25EXFYXQHELBRJXSW)  
 
 Il est possible de le lancer sous Docker.  
 Pour lancer le projet :  
