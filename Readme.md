@@ -8,5 +8,6 @@ Pour le lancer sous Docker :
     -Lancer un invite de commande  
     -docker build .  
     -docker run -t "nom image" .  
-    -docker run -p 20000:10000 -t "nom image" .  
+    -docker run -p 20000:10000 -t "nom image" .
+    -ecrire sur une page web "localhost"
 
