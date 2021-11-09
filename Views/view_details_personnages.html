@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <!-- Remplacer le titre par le nom du personnage -->
-  <?php $nom = $data["name"];?>
+  <?php $nom = $data["nom_personnage"];?>
   <title>
     <?=$data[$nom]["name"]?>
   </title>
-  <link rel="stylesheet" href="Content/Css/detailsPersonnages.css" />
+  <link rel="stylesheet" href="Content/Css/details_personnages.css" />
   <link rel="stylesheet" href="Content/Css/footer.css" />
   <link rel="stylesheet" href="Content/Css/header.css" />
 </head>
@@ -34,14 +34,14 @@
   <?php echo $data[$nom]["lore"]; ?>
 </p>
 
-
 <?php 
-  $character_spells = $data[$nom]["spells"];
-  $character_passive = $data[$nom]["passive"]["image"]["full"];
+  $sort_personnage = $data[$nom]["spells"];
+  $passif_personnage = $data[$nom]["passive"]["image"]["full"];
 ?>
+
 <div class="colonne">
   <div class="sort-ligne ligne">
-    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$character_passive?>" class="sort-img ligne">
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/passive/<?=$passif_personnage?>" class="sort-img ligne">
     <span class="sort-descriptions colonne">
       <strong>
         <?php echo $data[$nom]["passive"]["name"]; ?>
@@ -51,17 +51,14 @@
   </div>
 
 
-
-
-
   <?php for($i=0; $i<=3;$i++){ ?>
   <div class="sort-ligne ligne">
-    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$character_spells[$i]['id']?>.png" class="sort-img ligne">
+    <img src="http://ddragon.leagueoflegends.com/cdn/11.20.1/img/spell/<?=$sort_personnage[$i]['id']?>.png" class="sort-img ligne">
     <span class="sort-descriptions colonne">
       <strong>
-        <?php echo $character_spells[$i]["name"]; ?>
+        <?php echo $sort_personnage[$i]["name"]; ?>
       </strong>
-      <?php echo $character_spells[$i]["description"]; ?>
+      <?php echo $sort_personnage[$i]["description"]; ?>
     </span>
   </div>
   <?php } ?>

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <!-- Ca c'est pour les mobiles -->
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="Content/Css/sortsInvocateur.css" />
+  <link rel="stylesheet" href="Content/Css/sorts_invocateur.css" />
   <link rel="stylesheet" href="Content/Css/footer.css" />
   <link rel="stylesheet" href="Content/Css/header.css" />
   <title>Sorts d'invocateur</title>
@@ -15,7 +15,7 @@
 <?php require_once("Views/view_header.html")?>
   <?php 
         foreach($data as  $cle => $value):
-        $summoner_name = $data[$cle]["name"];
+        $nom_sorts_invocateur = $data[$cle]["name"];
       ?>
   <?php 
           switch($data[$cle]["id"]){
@@ -37,11 +37,11 @@
             default:
         ?>
   <div class="imageEtNom">
-    <div class="summoner">
-      <img src="http://ddragon.leagueoflegends.com/cdn/11.21.1/img/spell/<?=$cle?>.png" class="summoner-img">
+    <div class="invocateur">
+      <img src="http://ddragon.leagueoflegends.com/cdn/11.21.1/img/spell/<?=$cle?>.png" class="invocateur-img">
       <span class="texte">
         <strong>
-          <?php echo $summoner_name; ?>
+          <?php echo $nom_sorts_invocateur; ?>
         </strong>
         <?php echo $data[$cle]["description"];
           } ?>

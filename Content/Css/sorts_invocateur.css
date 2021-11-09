@@ -34,14 +34,14 @@ nav a {
   flex-direction: column;
 }
 
-.summoner {
+.invocateur {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   margin-bottom: 1%;
 }
 
-.summoner-img {
+.invocateur-img {
   width: 100px;
   height: 100px;
 }

@@ -38,12 +38,12 @@ class Model
     foreach ($obj["data"] as $cle => $value) {
       $informations[$cle] = $value;
       $index++;
-      $informations["name"] = $cle;
+      $informations["nom_personnage"] = $cle;
     }
     return $informations;
   }
 
-  public function get_summoner_spells(): ?array
+  public function get_sorts_invocateur(): ?array
   {
     $adresse = "http://ddragon.leagueoflegends.com/cdn/11.21.1/data/fr_FR/summoner.json";
     $obj = json_decode(file_get_contents($adresse), true);
