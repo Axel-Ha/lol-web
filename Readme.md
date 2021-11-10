@@ -1,7 +1,7 @@
 Ce projet est codé en PhP. Il utilise l'api d dragon leagueoflegends pour recuperer la liste des personnage etc. 
 
-![Liste personnages](lol-web/Content/image/liste_personnages.png)  
-![Presentation personnage](lol-web/Content/image/presentation_personnage.png)  
+![Liste personnages](Content/image/liste_personnages.png)  
+![Presentation personnage](Content/image/presentation_personnage.png)  
 
 Il est possible de le lancer sous Docker.  
 Pour lancer le projet :  
