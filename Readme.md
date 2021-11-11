@@ -1,20 +1,21 @@
 ## 1. Description  
 
-Ce site web nous permets d'avoir la liste complète des personnages du jeu vidéo League of Legends.  
-Grâce à ce site, en cliquant sur un des peronnages présent sur la liste, une description du personnage est affiché.  
-Nous voyons ainsi les compétences qu'il possède.  
+Ce projet présente simplement les personnages disponibles au sein du jeu League of Legends.  
+Toutes les informations de ces personnages sont dynamiquement récupérées depuis une API externe.  
+
 ## 2. Technologies
-Ce projet est un site web basé sur du PHP, HTML, Css.
-Il y'a une utilisation de l'api que nous pouvons retrouver sur ce site `https://developer.riotgames.com/docs/lol`.  
+- PHP
+- HTML/CSS
+- Docker
+- API de Riot Games (https://developer.riotgames.com/docs/lol)
 
 ## 3. Utilisation  
 Il est possible de le lancer sous Docker.  
 Pour lancer le projet :  
-  - Lancer un invite de commande  
-  - docker build .  
-  - docker run -t "nom image" .
-  - docker run -p 20000:10000 -t "nom image" .
-  - ecrire sur une page web "localhost"
+  - `docker build .`
+  - `docker run -t lol-web .`
+  - `docker run -p 20000:10000 -t lol-web .`
+  - Ouvrir l'URL `localhost:20000`
 
 ## 4. Images  
 
