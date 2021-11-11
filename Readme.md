@@ -7,8 +7,6 @@ Nous voyons ainsi ses compétences que nous utiliserons pendant une partie.
 ## 2. Technologies
 Ce projet est un site web basé sur du PHP, HTML, Css.
 Il y'a une utilisation de l'api que nous pouvons retrouver sur ce site `https://developer.riotgames.com/docs/lol`.  
-Ce projet est codé en PhP. Il utilise l'api d dragon leagueoflegends pour recuperer la liste des personnage etc. 
-
 
 ## 3. Utilisation  
 Il est possible de le lancer sous Docker.  
