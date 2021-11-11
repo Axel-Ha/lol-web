@@ -2,7 +2,7 @@
 
 Ce site web nous permets d'avoir la liste complète des personnages du jeu vidéo League of Legends.  
 Grâce à ce site, en cliquant sur un des peronnages présent sur la liste, une description du personnage est affiché.  
-Nous voyons ainsi ses compétences que nous utiliserons pendant une partie.  
+Nous voyons ainsi les compétences qu'il possède et ainsi la possibilité d'utiliser pendant une partie.  
 
 ## 2. Technologies
 Ce projet est un site web basé sur du PHP, HTML, Css.
