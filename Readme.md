@@ -5,9 +5,9 @@ Ce projet est codé en PhP. Il utilise l'api d dragon leagueoflegends pour recup
 
 Il est possible de le lancer sous Docker.  
 Pour lancer le projet :  
-    -Lancer un invite de commande  
-    -docker build .  
-    -docker run -t "nom image" .  
-    -docker run -p 20000:10000 -t "nom image" .
-    -ecrire sur une page web "localhost"
+  - Lancer un invite de commande  
+  - docker build .  
+  - docker run -t "nom image" .
+  - docker run -p 20000:10000 -t "nom image" .
+  - ecrire sur une page web "localhost"
 
