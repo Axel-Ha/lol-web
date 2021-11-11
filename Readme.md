@@ -1,8 +1,14 @@
+## 1. Description  
+
+Ce site web nous permets d'avoir la liste complète des personnages du jeu vidéo League of Legends.  
+Grâce à ce site, en cliquant sur un des peronnages présent sur la liste, une description du personnage est affiché.  
+Nous voyons ainsi ses compétences que nous utiliserons pendant une partie.  
+
+## 2. Technologie  
 Ce projet est codé en PhP. Il utilise l'api d dragon leagueoflegends pour recuperer la liste des personnage etc. 
 
-![Liste personnages](Content/image/liste_personnages.png)  
-![Presentation personnage](Content/image/presentation_personnage.png)  
 
+## 3. Utilisation  
 Il est possible de le lancer sous Docker.  
 Pour lancer le projet :  
   - Lancer un invite de commande  
@@ -11,3 +17,11 @@ Pour lancer le projet :
   - docker run -p 20000:10000 -t "nom image" .
   - ecrire sur une page web "localhost"
 
+## 4. Images  
+
+
+## 4.1 Liste personnages    
+![Liste personnages](Content/image/liste_personnages.png)  
+
+## 4.2 Présentation personnage  
+![Presentation personnage](Content/image/presentation_personnage.png)  
